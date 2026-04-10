@@ -49,8 +49,6 @@ function page() {
 
             {/* RIGHT IMAGE */}
             <div className="relative flex justify-center">
-              {/* Glow */}
-              <div className="absolute w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"></div>
 
               <img
                 src="/my-img.jpeg"
