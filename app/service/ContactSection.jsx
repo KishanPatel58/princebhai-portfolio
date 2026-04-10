@@ -4,11 +4,13 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import PhoneInput from "react-phone-input-2";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
+    user_phone: "",
     message: "",
   });
 
@@ -39,6 +41,7 @@ export default function ContactSection() {
         setFormData({
           user_name: "",
           user_email: "",
+          user_phone: "",
           message: "",
         });
       })
@@ -111,7 +114,29 @@ export default function ContactSection() {
             visible: { opacity: 1, y: 0 },
           }}
         />
-
+        {/* Phone */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
+          <PhoneInput
+            country={"in"}
+            value={formData.user_phone}
+            onChange={(phone) =>
+              setFormData({ ...formData, user_phone: phone })
+            }
+            inputProps={{
+              name: "user_phone",
+              required: true,
+            }}
+            containerClass="w-full !border !border-black !rounded-lg"
+            inputClass="!w-full !h-[50px] !pl-14 !rounded-r-lg !border-0 !bg-white !text-black"
+            buttonClass="!bg-white !border-0 !rounded-l-lg"
+            dropdownClass="!text-black !z-50"
+          />
+        </motion.div>
         {/* Message */}
         <motion.textarea
           name="message"
@@ -139,6 +164,6 @@ export default function ContactSection() {
           {status === "sending" ? "Sending..." : "Send Message"}
         </motion.button>
       </motion.form>
-    </motion.section>
+    </motion.section >
   );
 }

@@ -59,10 +59,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
-        <Navbar />
-        {children}
-        <ScrollTop />
-        <Toaster position="top-center" />
+          <Navbar />
+          {children}
+          <ScrollTop />
+          <Toaster position="top-center" />
       </body>
     </html>
   );
