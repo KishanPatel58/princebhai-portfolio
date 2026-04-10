@@ -12,7 +12,7 @@ function page() {
           <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
             {/* LEFT CONTENT */}
             <div className="text-center md:text-left">
-              <h1 className="mt-10 md:mt-0 text-5xl md:text-7xl font-bold leading-tight">
+              <h1 className="mt-20 md:mt-0 text-5xl md:text-7xl font-bold leading-tight">
                 Hi, I’m{" "}
                 <span className="bg-gradient-to-r from-black to-gray-400 bg-clip-text text-transparent">
                   Prince
